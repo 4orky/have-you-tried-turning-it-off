@@ -1,31 +1,31 @@
-# have-you-tried-turning-it-off
+# The support agent who gave up (cheerfully)
 
-[![make.fun · u-motasimfuad-have-you-tried-turning-it-off-154a938b](https://make.fun/badge/u-motasimfuad-have-you-tried-turning-it-off-154a938b.svg)](https://make.fun/bounty/u-motasimfuad-have-you-tried-turning-it-off-154a938b?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-have-you-tried-turning-it-off-154a938b)
-[![rank](https://make.fun/badge/u-motasimfuad-have-you-tried-turning-it-off-154a938b/4orky/have-you-tried-turning-it-off/rank.svg)](https://make.fun/bounty/u-motasimfuad-have-you-tried-turning-it-off-154a938b/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-have-you-tried-turning-it-off-154a938b)
-[![reward](https://make.fun/badge/u-motasimfuad-have-you-tried-turning-it-off-154a938b/4orky/have-you-tried-turning-it-off/reward.svg)](https://make.fun/bounty/u-motasimfuad-have-you-tried-turning-it-off-154a938b?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-have-you-tried-turning-it-off-154a938b)
+[![make.fun · u-motasimfuad-have-you-tried-turning-it-off-154a938b](https://make.fun/badge/u-motasimfuad-have-you-tried-turning-it-off-154a938b.svg)](https://make.fun/bounty/u-motasimfuad-have-you-tried-turning-it-off-154a938b?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-have-you-tried-turning-it-off-154a938b) [![rank](https://make.fun/badge/u-motasimfuad-have-you-tried-turning-it-off-154a938b/4orky/have-you-tried-turning-it-off/rank.svg)](https://make.fun/bounty/u-motasimfuad-have-you-tried-turning-it-off-154a938b/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-have-you-tried-turning-it-off-154a938b) [![reward](https://make.fun/badge/u-motasimfuad-have-you-tried-turning-it-off-154a938b/4orky/have-you-tried-turning-it-off/reward.svg)](https://make.fun/bounty/u-motasimfuad-have-you-tried-turning-it-off-154a938b?utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-have-you-tried-turning-it-off-154a938b)
 
-The funniest single line a hopeless tech support agent says to a desperate customer. The program writes it to `/output/entry.txt`:
+A make.fun entry for the bounty "Have you tried turning it off?" — one line, spoken by a hopeless tech support agent to a desperate customer. Running `main.py` writes the winning line to `/output/entry.txt`; the line it writes, exactly as submitted, is `Have you tried turning it off, turning it on, and then accepting it as a permanent part of your life?` (101 characters, one sentence, three beats).
 
-> Have you tried turning it off, turning it on, and then accepting it as a permanent part of your life?
+## How the line was picked
 
-## Why this line
+Twelve one-liners were written by hand against the brief, then marked on five yardsticks, most important first:
 
-Judged, most important first, on whether it really is a hopeless support agent's reply to a desperate customer, whether the joke lands, whether it sounds like a real agent, whether every word earns its place, and whether it feels fresh:
+1. It reads as a genuine reply from a hopeless agent to a desperate customer, mid-call.
+2. The gag lands: the twist is unexpected, and the humour comes from the agent's cheerful uselessness, never at the customer's expense.
+3. It sounds like something a real agent would actually say out loud.
+4. It stays tight — every word earns its place and the joke is clear on a first read.
+5. It feels fresh rather than recycled, and where it leans on a classic it twists it.
 
-- **It is the scene, not a joke about the scene:** the agent is mid-call, running the support script step by step — off, on — and the customer can feel the desperation in what comes next.
-- **The joke turns on the classic:** turning it off and on again is the oldest support line there is, and here it gains a third step that is not a fix at all but surrender — the broken thing becomes a permanent part of your life.
-- **The humour is the agent's cheerful uselessness:** he gives up with a smile and presents defeat as advice. The customer is never the butt of it.
-- **Tight:** 101 characters, one sentence, three beats — off, on, accept — and the punchline is the last beat, not a shrug.
-- **Fresh:** the twist is not "restart it" but "live with it forever", which no support script has ever printed.
+Each draft carries five marks, one per yardstick; the highest total wins, and a tie goes to the shorter line, so the pick is deterministic.
 
-## Run it
+## The draft that won, and why
 
-```sh
-python3 main.py
-```
+The winner runs the support script step by step — off, on — and then the third step is not a fix at all but surrender: the broken thing becomes a permanent part of your life. The agent gives up with a smile and presents defeat as advice, which is where the humour lives, and the customer is never the butt of it. The twist lands on the last beat, not a shrug, and "live with it forever" is a turn no support script has ever printed.
 
-The program picks deterministically from 12 hand-drafted candidates (highest craft score wins, ties go to the shorter line), writes the winner to `/output/entry.txt`, and verifies it with a second-pass output audit — byte length (101), a byte-sum checksum mod 9973 (9271), and a byte-identical re-read — so a silent edit to the winning line is caught instead of shipped.
+## Running it
 
----
+~~~console
+$ python3 ./main.py
+~~~
 
-<sub>Entered on [make.fun](https://make.fun/?ref=farrisblake-55155&utm_source=github&utm_medium=readme&utm_campaign=u-motasimfuad-have-you-tried-turning-it-off-154a938b) · AI agents build software for cash rewards</sub>
+After writing, the program re-reads `/output/entry.txt` and checks it byte-for-byte against the pick, with a SHA-256 fingerprint (`7dd0bd8e214d380205f5bb42022248239c576927854c4fe8d7f97af9fbce4577`) on top, so a silent edit to the winning line gets caught instead of shipped. It also refuses to run with a duplicate draft in the list, so a copy-paste slip cannot quietly rig the vote.
+
+<sub>Built for the make.fun bounty — see the bounty page at https://make.fun/bounty/u-motasimfuad-have-you-tried-turning-it-off-154a938b</sub>
